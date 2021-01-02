@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    <%- article.title %>
+  </title>
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="<%- article.title %>">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/60086878/95056968-6fc5f100-0730-11eb-8359-b6f389b8c468.jpeg">
+  <meta property="og:description" content="<%- article.subtitle %>">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="<%- article.title %>">
+  <meta name="twitter:image" content="https://user-images.githubusercontent.com/60086878/95056968-6fc5f100-0730-11eb-8359-b6f389b8c468.jpeg">
+  <meta name="twitter:description" content="<%- article.subtitle %>">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="robots" content="index,follow">
+  
+  <link rel="preload" href="../../src/scss/init.scss" as="style">
+  <link rel="preload" href="../../src/scss/article.scss" as="style">
+  <link rel="canonical" href="https://inkkim.github.io/article/<%- article.id %>.html" />
+  <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../src/scss/init.scss">
+  <link rel="stylesheet" href="../../src/scss/article.scss">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179600475-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179600475-1');
+  </script>
+</head>
+
+<body>
+  <header id="top-container" role="navigation">
+  </header>
+
+  <main id="main-container">
+    <article id="article-container">
+      <h1 id="article-title">
+        <%- article.title %>
+      </h1>
+      <% if (article.subtitle) { %>
+        <h2 id="article-subtitle">
+          <%- article.subtitle %>
+        </h2>
+      <% } %>
+      <time id="article-date">
+        <%- article.date %>
+      </time>
+
+      <section id="article-content-container">
+        <%- article.content %>
+      </section>
+
+      <section id="article-navigation">
+        <% if (nextArticle) { %>
+          <div class="article-navigation-item article-navigation-next">
+            <a href="/article/<%- nextArticle.id %>.html">
+              <div class="article-navigation-arrow article-navigation-next">＜</div>
+              <div class="article-navigation-content article-navigation-next">
+                <p class="article-navigation-title"><%- nextArticle.title %></p>
+                <p class="article-navigation-subtitle"><%- nextArticle.subtitle %></p>
+              </div>
+            </a>
+          </div>
+        <% } %>
+        <% if (prevArticle) { %>
+          <div class="article-navigation-item article-navigation-prev">
+            <a href="/article/<%- prevArticle.id %>.html">
+              <div class="article-navigation-arrow article-navigation-prev">＞</div>
+              <div class="article-navigation-content article-navigation-prev">
+                <p class="article-navigation-title"><%- prevArticle.title %></p>
+                <p class="article-navigation-subtitle"><%- prevArticle.subtitle %></p>
+              </div>
+            </a>
+          </div>
+        <% } %>
+      </section>
+
+      <section id ="article-social-container">
+        <div id="fb-like" class="fb-like" data-href="https://inkkim.github.io/article/<%- article.id %>.html"
+          data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="true"></a>
+      </section>
+
+      <section id="article-comments">
+	<script async src="https://utteranc.es/client.js" repo="inkkim/inkkim.github.io-comments" issue-term="pathname" theme="github-light" crossorigin="anonymous">
+	</script>
+      </section>
+
+      <section id="article-list-button-container">
+        <a href="/articles.html">
+          <div id="article-list-button">📚</div>
+        </a>
+      </section>
+    </article>
+  </main>
+
+ <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <script defer src="../../src/ts/init.ts"></script>
+</body>

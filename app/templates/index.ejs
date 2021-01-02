@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title><%- blogTitle %></title>
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="<%- blogTitle %>">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/60086878/95056968-6fc5f100-0730-11eb-8359-b6f389b8c468.jpeg">
+  <meta property="og:description" content="데이터 사이언티스트를 지향하는 데이터 엔지니어가 되고싶은 사람">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="<%- blogTitle %>">
+  <meta name="twitter:image" content="https://user-images.githubusercontent.com/60086878/95056968-6fc5f100-0730-11eb-8359-b6f389b8c468.jpeg">
+  <meta name="twitter:description" content="데이터 사이언티스트를 지향하는 데이터 엔지니어가 되고싶은 사람">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="robots" content="index,follow">
+  
+  <link rel="preload" href="../src/scss/init.scss" as="style">
+  <link rel="preload" href="../src/scss/article.scss" as="style">
+  <link rel="canonical" href="https://inkkim.github.io/" />
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../src/scss/init.scss">
+  <link rel="stylesheet" href="../src/scss/index.scss">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179600475-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179600475-1');
+  </script>
+</head>
+
+<body>
+  <header id="top-container" role="navigation">
+  </header>
+
+  <main id="main-container">
+    <section id="about-container">
+      <div style="width: 300px; height: 225px; overflow: hidden">
+        <img src="https://user-images.githubusercontent.com/60086878/95078938-dfe46f00-0750-11eb-98eb-82522c7eca13.jpeg" alt="My profile picture" style="width: 300px; height: auto;"/>
+      </div>
+      
+    </section>
+    <p>Data Engineering beginner🤩</p>
+  </main>
+
+  <script defer src="../src/ts/init.ts"></script>
+</body>
+
+</html>
